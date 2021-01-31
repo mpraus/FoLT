@@ -213,10 +213,83 @@ Variants:
 - single-label vs. multi-label
 - sequence classification
 
+Clustering
+
 Supervised Classification Workflow:
 
+A classifier is called supervised if it is built based on training corpora containing the correct label for each input.
+
 Obtain training, development, test data -> Represent the input -> Select algorithm and train model -> evaluate results and preform the task
+
+**Use Cases:**
+- POS Tagging
+- Sentence Segmentation
+
+**Types of Classifiers:** Naive Bayes, Decision Trees
+ 
+Useful for Opitcal Character Recognition, language identification, spam classification, and meidcal aid and drug discovery
+
+
+Model Selection vs. Model Assessment
+- Model selection: estimating prediction error of different models in order to choose the best model (feature tuning, hyperparameter tuning)
+- Model assesment: having chosen a final model, estimating its performance on new data.
+
+Cross Validation
+
+Data often scare, therefore k-fold cross validation. Divide development data into k different folds. Dev-test set.
+
+
+### Performance Metrics
+- Accuracy = correct/all
+    + take frequency districution of labels into account
+    + most frequent baseline
+- Percision: Tp/(Tp+Fp)
+- Recall: Tp/(Tp+Fn)
+- F-Measure: (2*Percision*Recall)/(Percision+Recall)
+
+### Selected Machine Learning Methods
+
+#### Decision Trees
+Flowchart that selects labels for input values. Decision nodes check feature values, leaf nodes assing labels. Splitt cases on features.
+
+Pros:
+- simple to interpret
+- hierarchially categorized dta
+
+Cons:
+- Training data in lower nodes is small
+- Force features to be checked in certain order even if independet
+
+#### Naive Bayes
+Prior probability is calculated, then the contribution of each feature to outcome is combined with prior probability. Label with the highest likelihood is assigned. All features are independet of each other.
+
+Use smoothing to deal with zero counts.
+
+### Scikit-learn
+IRIS Dataset most common
+- three types of flowers
+- based on length and width of leaves
+
+### Deep learning with TensorFlow and Keras
+
+**Multi-layer perceptron*** TODO: Watch Video
+
+Word embeddings: Project vocabulary to a latent semantic space.
+
+Not all sentences have the same length -> average word mebedinng, fill no existant words with padding, neural networks
+
+
+Useful for readability assessment, sentiment analysis, word sense disambiguation
+
 ## Information Extraction
+Architecture:
+
+Sentence segmentation -> tokenization -> POS tagging -> entity detection -> relation detection -> relations
+
+### Chunking
+Technique for entity detection.
+
+Noun Phrase Chunking: Search for chunks corresponding to individual noun phrases, chunks defined so that they can't contain other chunks. Can be identified using chunk grammar (tag patterns, regular expressions). Can be visualized as tree
 
 ## Syntactic Analysis
 
@@ -230,6 +303,9 @@ Obtain training, development, test data -> Represent the input -> Select algorit
 - [x] Lecture 6: NLP Data: Processing Raw Text
 - [x] Lecture 7: NLP Tagging Tasks: Categorizing Words
 - [x] Lecture 8: NLP Tagging: Automatic Tagging
-- [ ] Lecture 9: Automatic Classification
-- [ ] Lecture 10
+- [x] Lecture 9: Automatic Classification
+- [x] Lecture 10: Automatic Classification
+- [ ] Lecture 11: Information Extraction
+- [ ] Lecture 12:
+- [ ] Lecture 13:
 - [ ] Deep Learning
